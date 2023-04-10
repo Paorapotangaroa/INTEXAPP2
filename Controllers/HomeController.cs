@@ -6,11 +6,14 @@ namespace INTEXAPP2.Controllers
 {
     public class HomeController : Controller
     {
+        private mummiesContext Context;
+
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, mummiesContext temp)
         {
             _logger = logger;
+            Context = temp;
         }
 
         public IActionResult Index()
@@ -18,9 +21,10 @@ namespace INTEXAPP2.Controllers
             return View();
         }
 
-        public IActionResult BurialSummary()
+        public IActionResult BurialRecords()
         {
-            return View();
+            var Burials = Context.Burialmains.Take(5).ToList();
+            return View(Burials);
         }
 
         public IActionResult SupervisedAnalysis()

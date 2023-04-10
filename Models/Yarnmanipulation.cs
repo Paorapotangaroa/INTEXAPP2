@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace INTEXAPP2.Models
 {
     public partial class Yarnmanipulation
     {
+        [Key]
+        [Required]
         public long Id { get; set; }
         public string Thickness { get; set; }
         public string Angle { get; set; }

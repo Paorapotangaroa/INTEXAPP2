@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace INTEXAPP2.Models
 {
     public partial class Artifactkomaushimregister
     {
+        [Key]
+        [Required]
         public long Id { get; set; }
         public string Provenance { get; set; }
         public string Description { get; set; }

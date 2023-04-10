@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace INTEXAPP2.Models
 {
     public partial class C14
     {
+        [Key]
+        [Required]
         public long Id { get; set; }
         public string Description { get; set; }
         public string Category { get; set; }

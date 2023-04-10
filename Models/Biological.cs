@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace INTEXAPP2.Models
 {
     public partial class Biological
     {
+        [Key]
+        [Required]
         public long Id { get; set; }
         public int? Racknumber { get; set; }
         public int? Bagnumber { get; set; }

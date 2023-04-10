@@ -1,8 +1,7 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{
-}
+@model List<Burialmain>
 
 
 <h1>Burial Summary List and Burial Record Pages</h1>
@@ -12,3 +11,10 @@
 <h2>The database has many, many fields, and we do not expect you to be able to filter by all</h2>
 <h2>The client will have some insight into which filter options should take priority</h2>
 <h2>The ability to select a specific record and pull up the details of the burial (i.e. field notes, photographs, measurements, and any details captured about the mummy or items included in its burial.)</h2>
+
+@foreach (Burialmain b in Model)
+{
+    <partial name="BurialSummary" model="b" />
+}
+
+
